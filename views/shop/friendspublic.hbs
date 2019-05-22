@@ -1,0 +1,61 @@
+
+  <div class="friendspublic">
+
+      <p class="far">
+    البحث غن الاصدقاء
+      </p>
+
+  {{# each friends}}
+     <div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="people-nearby">
+              <div class="nearby-user">
+                <div class="row">
+                  <div class="col-md-2 col-sm-2">
+                    <img src="http://localhost:3000/{{ph}}" alt="user" class="profile-photo-lg">
+                  </div>
+                  <div class="col-md-7 col-sm-7">
+                    <h5><a href="/profile/{{_id}}" class="profile-link">{{name}}</a></h5>
+                    <p>{{email}}</p>
+                    <p class="text-muted">{{city}}</p>
+                  </div>
+                  <div class="col-md-3 col-sm-3">
+
+                         
+                   <a href="/addfriend/{{_id}}">
+                   
+                    <button  class="btn btn-primary pull-right">Add Friend</button>
+                   </a> 
+
+                  </div>
+                </div>
+              </div>
+            </div>
+    	</div>
+	</div>
+</div>
+
+   
+
+   {{/each}}
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+

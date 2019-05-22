@@ -1,0 +1,40 @@
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+      <class class="new">
+
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/"><p> social</p></a>
+    </div>
+    
+    </class>
+    
+    <ul class="nav navbar-nav navbar-right">
+           
+           <li>
+               
+           </li>
+           {{# if login}}
+         
+
+      <li><a href="/profile/{{user._id}}"><span> <img src="http://localhost:3000/{{user.ph}}"> </span> الشخصية</a></li>
+    <li><a href="/friends"><span class=" glyphicon glyphicon-search">  </span> البحث عن اصدقاء</a></li>
+
+     <li><a href="/"><span class=" glyphicon glyphicon-home"></span>  الرئيسية</a></li>
+
+      <li><a href="/user/messages"><span class="glyphicon glyphicon-upload"></span> رسائل</a></li>
+
+      <li><a href="/user/logout"><span class="glyphicon glyphicon-log-in"></span> تسجيل خروج</a></li>
+              {{ else }}
+                    <li><a href="/user/signup"><span class="glyphicon glyphicon-user"></span> انشيء حساب</a></li>
+                  <li><a href="/user/signin"><span class="glyphicon glyphicon-log-in"></span> تسجيل الدخول</a></li>
+             {{/if}}
+
+
+    </ul>
+
+  </div>
+</nav>
+
+
+

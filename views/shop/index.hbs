@@ -1,0 +1,95 @@
+<div class="main_page">
+<div class="container-fluid bg-grey">
+  <h2 class="text-center">CONTACT</h2>
+  <div class="row">
+    <div class="col-sm-3">
+      <p>{{user.name}}</p>
+            <p>{{user.phone}}</p>
+                  <p>{{user.email}}</p>
+
+
+      <p><span class="glyphicon glyphicon-map-marker"></span> Chicago, US</p>
+      <p><span class="glyphicon glyphicon-phone"></span> +00 1515151515</p>
+      <p><span class="glyphicon glyphicon-envelope"></span> myemail@something.com</p> 
+    </div>
+    <div class="col-sm-6">
+        <form action="/addpost" method="POST"  enctype="multipart/form-data">
+        <div class="addpost">
+
+      <div class="row">
+       <div class="chat_img"> <img src="http://localhost:3000/{{user.ph}}" alt="sunil"> </div>
+
+        <p>
+            what do you think
+        </p>
+      </div>
+      
+      <div class="row">
+        <textarea name="content" class="form-control" id="comments" name="comments" placeholder="بم تفكر؟" rows="5"></textarea><br>
+
+      </div>
+      <div class="row">
+          <input name="foo" type="file"> 
+          
+          <button type="submit" class="btn btn-primary" >post</button>
+      </div> 
+     </div>
+     </form>
+     <div class="post">
+
+     {{# each posts}}
+      <div class="row">
+        <div class="user">
+        <a href="/profile/{{user._id}}"> <img class="postimg" src="http://localhost:3000/{{user.ph}}" alt="sunil">  
+         <p class="far">{{user.name}}</p>  </a>  <br>
+            </div>
+         <div class="content">
+        <p class="far">{{body}}</p>
+
+          <a href="#">
+            <img class="img-fluid rounded mb-3 mb-md-0" src="http://localhost:3000/{{file}}" alt="">
+          </a>
+        </div>
+        <div class="postre">
+
+  <li> <a href="/show/{{_id}}">   <p>{{likes.length}}  likes {{comments.length}}  comments</p>  </a>  </li> 
+
+        </div>
+       <div id="hh" class="card-footer">
+          <a href="/like/{{_id}}" class="card-link"><i class="fa fa-gittip"></i> Like</a>
+            <a id="comment" class="card-link"><i class="fa fa-comment"></i> Comment</a>
+        <a href="#" class="card-link"><i class="fa fa-mail-forward"></i> Share</a>
+               </div>
+       <form action="/comment/{{_id}}" method="POST"  enctype="multipart/form-data">
+               <input id="write_com" name="comment" type="text"type="submit" placeholder="اكتب تعليقا"></textarea>
+       </form>
+
+
+
+        
+      </div>
+      <!-- /.row -->
+
+      <hr>
+      {{/each}}
+x
+       </div>
+
+    </div>
+   <div class="tr">
+
+    <div class="col-sm-2">
+      <p>{{user.name}}</p>
+            <p>{{user.phone}}</p>
+                  <p>{{user.email}}</p>
+
+
+      <p><span class="glyphicon glyphicon-map-marker"></span> Chicago, US</p>
+      <p><span class="glyphicon glyphicon-phone"></span> +00 1515151515</p>
+      <p><span class="glyphicon glyphicon-envelope"></span> myemail@something.com</p> 
+    </div>
+      </div>
+
+  </div>
+</div>
+</div>

@@ -1,0 +1,65 @@
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<div class="postshow">
+          <div class="row">
+        <div class="user">
+         <img class="postimg" src="http://localhost:3000/{{post.user.ph}}" alt="sunil"> 
+         <p class="far">{{post.user.name}}</p> <br>
+            </div>
+         <div class="content">
+        <p class="far">{{post.body}}</p>
+
+          <a href="#">
+            <img class="img-fluid rounded mb-3 mb-md-0" src="http://localhost:3000/{{post.file}}" alt="">
+          </a>
+                            <br>
+
+            <li> <p>{{post.likes.length}}  likes {{post.comments.length}}  comments</p>   </li> 
+
+        </div>
+
+
+
+       
+
+
+
+        
+      </div>
+     
+     <div class="comment">
+         
+         {{#each comments as |item|}}
+                
+       <a href="/profile/{{item.[0]._id}}">
+          <img class="postimg" src="http://localhost:3000/{{item.[0].ph}}" alt="sunil"> 
+         <p class="comowner">{{item.[0].name}}</p> <br>
+       </a>             
+     
+       <p class="far">{{item.[1]}}</p>
+
+    {{/each}}
+   </div>
+
+<div  class="card-footer">
+          <a href="/like/{{post._id}}" class="card-link"><i class="fa fa-gittip"></i> Like</a>
+            <a id="comment"  class="card-link"><i class="fa fa-comment"></i> Comment</a>
+        <a href="#" class="card-link"><i class="fa fa-mail-forward"></i> Share</a>
+        
+       <form action="/comment/{{post._id}}" method="POST"  enctype="multipart/form-data">
+   <img class="postimg" src="http://localhost:3000/{{user.ph}}" alt="sunil"> 
+
+               <input id="write_com" name="comment" type="text"type="submit" placeholder="اكتب تعليقا"></textarea>
+       </form>
+
+     </div>
+     
+                       </div>
+           
+		
+        
+        
+</div>
+

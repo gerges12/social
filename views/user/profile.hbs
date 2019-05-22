@@ -1,0 +1,175 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<!--
+User Profile Sidebar by @keenthemes
+A component of Metronic Theme - #1 Selling Bootstrap 3 Admin Theme in Themeforest: http://j.mp/metronictheme
+Licensed under MIT
+-->
+<div class="above" >
+
+
+<div class="container">
+    <div class="row profile">
+		<div class="col-md-3">
+			<div class="profile-sidebar">
+				<!-- SIDEBAR USERPIC -->
+				<div class="profile-userpic">
+					<img src="http://localhost:3000/{{cuser.ph}}" class="img-responsive" alt="" style="    width: 250px;
+    height: 150px;">
+				</div>
+				<!-- END SIDEBAR USERPIC -->
+				<!-- SIDEBAR USER TITLE -->
+				<div class="profile-usertitle">
+					<div class="profile-usertitle-name">
+						{{cuser.name}} <span class="fa fa-envelope small pull-right"> </span>
+					</div>
+					<div class="profile-usertitle-job">
+						Developer
+					</div>
+				</div>
+				<!-- END SIDEBAR USER TITLE -->
+				<!-- SIDEBAR BUTTONS -->
+				<div class="profile-userbuttons">
+				{{# if your_prof}}
+         {{ else }}
+
+
+					{{# if is_logged}}
+					        <a href="/deletefriend/{{cuser._id}}">
+												<button type="button" class="btn btn-success btn-sm">delete friend</button>
+                	 </a>
+		   {{ else }}
+               <a href="/addfriend/{{cuser._id}}">
+										<button type="button" class="btn btn-success btn-sm">add friend</button>
+                </a>
+       {{/if}}
+
+
+
+					<a   href="/user/messages/{{cuser._id}}">
+                 <button type="button" class="btn btn-danger btn-sm">Message</button>
+          </a>
+
+				 {{/if}}
+
+				</div>
+				<!-- END SIDEBAR BUTTONS -->
+				<!-- SIDEBAR MENU -->
+				<div class="profile-usermenu">
+					<ul class="nav">
+						<li class="active">
+							<a href="#">
+							<i class="glyphicon glyphicon-home"></i>
+							city : {{cuser.city}} </a>
+						</li>
+						<li>
+							<a href="#">
+							<i class="glyphicon glyphicon-user"></i>
+							phone : {{cuser.phone}} </a>
+						</li>
+						<li>
+							<a href="#" target="_blank">
+							<i class="glyphicon glyphicon-ok"></i>
+							email : {{cuser.email}} </a>
+						</li>
+						<li>
+							<a href="#">
+							<i class="glyphicon glyphicon-flag"></i>
+							friends </a>
+           {{# each friends}}
+					 <div class="fr">
+						 <a href="/profile/{{_id}}">
+						      <img class="img-fluid rounded mb-3 mb-md-0" src="http://localhost:3000/{{ph}}" alt="">
+
+					 <p>
+                     {{name}}
+					 </p> 
+						 </a>
+                   <br>
+					 </div>
+
+  
+
+           
+
+
+            {{/each}}
+
+
+
+						</li>
+					</ul>
+				</div>
+				<!-- END MENU -->
+			</div>
+		</div>
+		<div class="col-md-9">
+            <div class="profile-content">
+												{{# if is_logged}}
+
+			              
+                         {{# each posts}}
+      <div class="row">
+        <div class="user">
+        <a href="/profile/{{user._id}}"> <img class="postimg" src="http://localhost:3000/{{user.ph}}" alt="sunil">  
+         <p class="far">{{user.name}}</p>  </a>  <br>
+            </div>
+         <div class="content">
+        <p class="far">{{body}}</p>
+
+          <a href="#">
+            <img class="img-fluid rounded mb-3 mb-md-0" src="http://localhost:3000/{{file}}" alt="">
+          </a>
+        </div>
+        <div class="postre">
+
+  <li> <a href="/show/{{_id}}">   <p>{{likes.length}}  likes {{comments.length}}  comments</p>  </a>  </li> 
+
+        </div>
+       <div id="hh" class="card-footer">
+          <a href="/like/{{_id}}" class="card-link"><i class="fa fa-gittip"></i> Like</a>
+            <a id="comment" class="card-link"><i class="fa fa-comment"></i> Comment</a>
+        <a href="#" class="card-link"><i class="fa fa-mail-forward"></i> Share</a>
+               </div>
+       <form action="/comment/{{_id}}" method="POST"  enctype="multipart/form-data">
+               <input id="write_com" name="comment" type="text"type="submit" placeholder="اكتب تعليقا"></textarea>
+       </form>
+
+
+
+        
+      </div>
+      <!-- /.row -->
+
+      <hr>
+      {{/each}}
+			       {{/if}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+		</div>
+	</div>
+</div>
+<center>
+<strong>Powered by <a href="http://j.mp/metronictheme" target="_blank">KeenThemes</a></strong>
+</center>
+<br>
+<br>
+</div>
