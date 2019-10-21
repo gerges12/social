@@ -1,3 +1,3 @@
-## Tutorial on How to Build a Shopping Cart with NodeJS/ Express
-
-This repository holds the source code of my YouTube series on how to create a shopping cart with NodeJS/Express/MongoDB
+Imitation to any social media as facebook which users
+can post and Interacts with others' posts by likes and comments and Add to
+friends list then chat with his as realtime by socket io
